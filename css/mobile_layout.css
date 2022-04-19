@@ -1,0 +1,520 @@
+@charset "utf-8";
+
+/* 모바일 서식 */
+
+@media screen and (max-width: 767px) {
+
+  /* body{
+    overflow-x: hidden;
+  } */
+
+  header{
+    background-color: #ffcb00;
+  }
+
+  .header_top{
+    position: relative;
+    height: 70px;
+  }
+  .header_top > h1{
+    position: absolute;
+    width: 200px;
+    left: 15px; top: 15px;
+  }
+
+  .header_top > h1 > a{
+    display: block;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+  }
+
+  .header_top img{
+    width: 100%;
+  }
+
+  .lnb{
+    display: none;
+  }
+
+  .total_btn{
+    display: block;
+    position: absolute;
+    right: 10px;
+    font-size: 28px;
+    top:15px;
+    cursor: pointer;
+  }
+  .total_btn > i.fa-bars{
+    padding: 6px;
+    font-size: 2rem;
+    color: #333;
+    display: block;
+  }
+
+  .header_bottom{
+    width: 90%; height: 100%;
+    right:-100%; top: 0px;
+    background-color: #ffcb00;
+    position: fixed;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 99999;
+  }
+
+  .header_bottom .gnb > ul > li:first-child{
+    display: block;
+    position: absolute;
+    left: 10px;
+  }
+
+  header > .header_top > .lnb_search{display: none;}
+
+  /* 토글 클릭하면 내비게이션 나오게 하기 */
+  #toggle:checked + header > .header_bottom{right: 0px;}
+
+  .gnb{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: 0px; right: 0px;
+    background: #ffcb00;
+  }
+
+  header > .header_bottom .gnb > ul > li i.fa-angle-down{
+    display: block;
+    color: #333;
+    z-index: 99999;
+    position: absolute;
+    font-size: 1.5rem;
+    right: 10px; top: 8px;
+  }
+
+  .header_bottom > label > i.fa-times{
+    display: block;
+    position: absolute;
+    left: 20px;
+    font-size: 2rem;
+    top:30px;
+    color: #333;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .gnb fieldset{border: none;}
+  .gnb legend{display: none;}
+  .gnb input{
+    height: 40px;
+    padding: 0px 10px;
+    border-radius: 3px;
+    border: none;
+  }
+  .gnb input[type=search]{
+    width: 200px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+  }
+  .gnb .gnb_search i.fa-search{
+    font-size: 1.5rem;
+    color: #333;
+    margin-left: 10px;
+  }
+
+  .gnb > ul{
+    padding-top: 20px;
+  }
+
+  .gnb > ul > li > label{
+    border-bottom: 1px solid #333;
+    padding: 15px;
+    display: block;
+    position: relative;
+  }
+
+  .gnb > ul > li:first-child{
+    border-bottom: none;
+  }
+
+  .gnb > ul > li:nth-child(2){
+    margin-top: 70px;
+  }
+
+  .gnb > ul > li{
+    line-height: 1.5rem;
+  }
+
+  .gnb > ul > li > label {
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #333;
+    text-indent: 10px;
+  }
+
+  .sub{
+    background-color: #e0b506;
+    display: none;
+  }
+
+  .sub > li {
+    width: 85%;
+  
+  }
+  .sub a{
+    display: block;
+    text-indent: 30px;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 20px;
+    padding: 10px; 
+    text-decoration: none;
+  }
+
+
+  /* 메인메뉴를 터치하면 아래 서브메뉴 나오게 하기*/
+  .gnb input[type=checkbox]:checked + .sub{display:block;}
+  
+
+  /* --------- 메인서식 --------------- */
+
+  /* 메인영역 */
+
+.main_slide{position: relative;}
+.main_slide img{width: 100%;}
+
+.cont{
+  width:100%; 
+  /* transform: translateY(-25px); */
+  display:grid;
+  box-sizing: border-box;
+  /* grid-gap:1.9531%; */
+  padding:3px 2.1484%;
+  grid-template-areas:
+    "soap"
+    "shop"
+    "story";
+}
+/* .cont img{
+  width: 100%; 자동으로 이미지 크기 조절
+  height: auto;
+} */
+.cont h3 {display: none;}
+  main{}
+  .slide{
+  }
+  .slide > h2{display: none;}
+  .slide img{
+    width: 100%;
+    height: 200px;
+  }
+  
+  .soap{
+    grid-area: soap;
+    width: 85%;
+    margin: 20px auto;
+    border: 5px solid #ffcb00;
+  }
+  .soap article{
+    padding: 25px 0px;
+    width: 80%;
+    margin: 0px auto;
+    text-align: center;
+    clear: both;
+  }
+  
+  .soap article > h2{
+    display: none;
+  }
+  .soap #soap_img{
+    width: 95%;
+  }
+  
+  .soap .soap_right{
+    width: 100%;
+    text-align: center;
+    margin: 5px auto;
+  }
+  
+  .soap_right > h2{
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 200;
+    padding-top: 30px;
+    padding-bottom: 16px;
+  }
+  
+  .soap_right p{
+    color: #333;
+    font-size: 0.8rem;
+    line-height: 30px;
+  }
+
+  .soap_right a{
+    width: 80px;
+    display: block;
+    margin: 10px auto;
+  }
+  
+  
+  
+  /* 버튼서식 */
+  .button{
+    background: #ffcb00;
+    font-size: 16px;
+    padding: 6px 30px;
+    transition: 0.5s;
+    cursor:pointer;
+  }
+  
+  .button:hover{
+    color: #333;
+    background: #fff;
+    border: 1px solid #333;
+  }
+  
+  /* 록시땅 쇼핑서식 */
+  .shop{
+    grid-area: shop;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .shop > h2{display: none;}
+  
+  .shop_wrap{
+    width: 100%;
+    background-color: #ffea94;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  
+  .shop_wrap img{
+    width: 100px;
+    display: block;
+    margin: 8px auto;
+    padding: 15px;
+  }
+  
+  .p_center{
+    width: 100%;
+    margin: 5px auto;
+    text-align: center;
+  }
+  .p_center a{
+    display: block;
+    text-align: center;
+    width: 80px;
+    margin: 15px auto;
+    line-height: 20px;
+  }
+  .p_center span:first-of-type{
+    top: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+  }
+  
+  .p_center span:last-of-type{
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    font-size: 1rem;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+  
+  /* 스와이퍼 슬라이드 - 상품목록 */
+  .shop_slide{
+    width: 100%;
+    position: relative; /*콘토를 버튼의 기준-부모*/  
+  }
+  
+  .shop_slide .swiper-slide{
+    text-align: center;
+  }
+  
+  .shop_slide .swiper-slide img{
+    width: 70%; 
+    margin:10px auto 10px auto;
+  }
+  
+  .swiper-slide > ul{
+    /* width: 100%; */
+    padding:0px 10px;
+    box-sizing: border-box; /*가로 100보다 초과되지 않게*/
+    display: flex;
+  }
+  .swiper-slide > ul > li{
+    width: 100%;
+  }
+  
+  /* 상품상세정보 서식 */
+  .info{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    font-size: 1em;
+    margin: 10px auto 45px auto;
+  }
+  .info > h4 {
+    font-weight: 500;
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+  .info > p{
+    line-height: 1.2rem;
+    font-size: 0.75rem;
+  }
+  .info > .price{
+    display: block;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #9b0a0a;
+  }
+
+  .info a{
+    text-align: center;
+    line-height: 2rem;
+  }
+  
+  
+  
+  
+  
+  /*  story영역 - 2022 체리 블라썸 */
+  
+  .story{
+    grid-area: story;
+    width: 100%;
+    background: #E8D5CE;
+    padding-bottom: 10px;
+  }
+  
+  .story article h2{
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  
+  .story article h2 img{
+    width: 40px;
+    padding-right: 10px;
+  }
+  
+  .story .s_img{
+    width: 80%;
+    display: block;
+    margin: 25px auto 25px auto;
+  }
+  
+  .story_left{
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+  }
+  .story_left h2{
+    width:100%;
+    font-size:0.65rem;
+    text-align: center;
+  }
+  .story_left p{
+    width: 100%;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding-bottom: 25px;
+  }
+
+  .insta{display: none;}
+  
+
+
+
+
+/* 푸터영역 */
+
+  footer{
+    width: 100%;
+    background-color: #ffcb00;
+  }
+
+  .f_top{
+    width: 100%;
+    height: 60px;
+    background-color: #e0b506;
+  }
+
+  .f_top .f_info01{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0px auto;
+    font-size: 0.6rem;
+  }
+
+  .f_info01 li{
+    padding: 0px 10px;
+    padding-top: 25px;
+  }
+
+  .f_info01 > li > a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.75rem;
+  }
+
+  .f_info01 > li > a:hover{
+    text-decoration: underline;
+  }
+
+  .f_info02{
+    width: 100%;
+    text-align: center;
+  }
+  .f_info02 img{
+    width: 200px;
+    margin: 0px auto;
+    padding-top: 15px;
+  }
+  .f_sns{
+    width: 300px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .f_sns > li{
+    padding: 0px 7px;
+  }
+  .f_sns > li > a{
+    color: #333;
+  }
+
+  address{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  address p{
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }
+
+  address p:last-child{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+
+}

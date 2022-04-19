@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>록시땅 - 반응형웹</title>
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+  <!-- 공통서식 -->
+  <link href="./css/base.css" rel="stylesheet" type="text/css">
+  <!-- 레이아웃 -->
+  <link href="./css/pc_layout.css" rel="stylesheet" type="text/css">
+  <link href="./css/tablet_layout.css" rel="stylesheet" type="text/css">
+  <link href="./css/mobile_layout.css" rel="stylesheet" type="text/css">
+  <!-- 스와이퍼 슬라이드 서식 -->
+  <link href="./css/swiper.css" rel="stylesheet" type="text/css">
+  <!-- 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <!-- 공급업체 접두사 자동으로 작성해주는 스크립트 -->
+  <script src="./script/prefixfree.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- 스와이퍼 제이쿼리 -->
+  <script src="./script/swiper.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $('.t_btn').hide();
+
+      $(window).scroll(function(){
+        let sPos = $(this).scrollTop();
+        console.log(sPos);
+        if(sPos>=143){
+          $('.t_btn').show();
+        }else{
+          $('.t_btn').hide();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- 체크박스 -->
+  <input type="checkbox" id="toggle">
+
+ <!-- 상단 헤더시작 -->
+ <header>
+   <div class="header_top">
+     <h1>
+       <a href="index.html" title="메인페이지 바로가기">
+        <img src="./img/logo.png" alt="상단로고">
+       </a>
+     </h1>
+
+    <!-- 오른쪽 상단 lnb메뉴 -->
+    <nav class="lnb">
+      <ul>
+        <li><a href="login.html" title="로그인">로그인</a></li>
+        <li><a href="join.html" title="회원가입">회원가입</a></li>
+        <li><a href="order.html" title="주문조회">주문조회</a></li>
+        <li><a href="cart.html" title="장바구니">장바구니</a></li>
+      </ul>
+    </nav>
+
+    <!-- 검색폼 -->
+    <fieldset class="lnb_search">
+      <legend>검색</legend>
+      <input type="search" id="search" placeholder="이달의 특가 5%" maxlength="50">
+      <label for="search" class="fas fa-search"><span>검색버튼</span></label>
+    </fieldset>
+    </div>
+
+     <!-- 전체메뉴 버튼(토글) -태블릿, 모바일용 피시버전에서는 숨길 것  -->
+     <label for="toggle" class="total_btn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <!-- 헤더영역 아래콘텐츠(메인 내비게이션) -->
+   <div class="header_bottom">
+    <label for="toggle">
+      <i class="fas fa-times gnb_close"></i>
+    </label>
+      <nav class="gnb">
+        <ul>
+          <li>
+            <fieldset class="gnb_search">
+              <legend>검색폼</legend>
+                <input type="search" placeholder="검색어를 입력하세요" class="search_box">
+                <i class="fas fa-search"></i>
+            </fieldset>
+          </li>
+          <li>
+            <label for="mnu01">
+            록시땅 소개<i class="fas fa-angle-down"></i>
+            </label>
+            <input type="checkbox" id="mnu01">
+            <ul class="sub">
+              <li><a href="a.html" title="">록시땅의 약속</a></li>
+              <li><a href="sub.html" title="">록시땅의 뷰티팁</a></li>
+              <li><a href="sub.html" title="">록시땅의 원료</a></li>
+            </ul>
+          </li>
+          <li>
+            <label for="mnu02">
+            스킨 케어<i class="fas fa-angle-down"></i>
+            </label>
+            <input type="checkbox" id="mnu02">
+            <ul class="sub">
+              <li><a href="b.html" title="">클렌저</a></li>
+              <li><a href="sub.html" title="">토너</a></li>
+              <li><a href="sub.html" title="">세럼&#x0026;오일</a></li>
+              <li><a href="sub.html" title="">수분&#x0026;영양 크림</a></li>
+              <li><a href="sub.html" title="">안티에이징</a></li>
+            </ul>
+          </li>
+          <li>
+            <label for="mnu03">
+            바디&#x0026;핸드 케어<i class="fas fa-angle-down"></i>
+            </label>
+            <input type="checkbox" id="mnu03">
+            <ul class="sub">
+              <li><a href="c.html" title="">바디 케어</a></li>
+              <li><a href="sub.html" title="">핸드 케어</a></li>
+              <li><a href="sub.html" title="">아트 오브 핸드크림</a></li>
+            </ul>
+          </li>
+          <li>
+            <label for="mnu04">
+            헤어 케어<i class="fas fa-angle-down"></i>
+            </label>
+            <input type="checkbox" id="mnu04">
+            <ul class="sub">
+              <li><a href="d.html" title="">샴푸</a></li>
+              <li><a href="sub.html" title="">컨디셔너</a></li>
+              <li><a href="sub.html" title="">마스크&#x0026;트리트먼트</a></li>
+              <li><a href="sub.html" title="">에코리필</a></li>
+              <li><a href="sub.html" title="">헤어오일&#x0026;에센스</a></li>
+            </ul>
+          </li>
+          <li>
+            <label for="mnu05">
+            맨즈 케어<i class="fas fa-angle-down"></i>
+            </label>
+            <input type="checkbox" id="mnu05">
+            <ul class="sub">
+              <li><a href="e.html" title="">스킨케어</a></li>
+              <li><a href="sub.html" title="">쉐이빙</a></li>
+              <li><a href="sub.html" title="">배쓰&#x0026;샤워</a></li>
+              <li><a href="sub.html" title="">바디 로션&#x0026;크림</a></li>
+            </ul>
+          </li>
+          <li><label for="mnu06">
+            향수 &#x0026; 홈<i class="fas fa-angle-down"></i>
+            </label>
+            <input type="checkbox" id="mnu06">
+            <ul class="sub">
+              <li><a href="f.html" title="">여성용 향수</a></li>
+              <li><a href="sub.html" title="">남성용 향수</a></li>
+              <li><a href="sub.html" title="">홈 컬렉션</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+ </header>
+
+ <!-- 메인콘텐츠 영역 시작 -->
+ <main>
+  <article class="slide">
+    <h2>메인슬라이드</h2>
+    <div class="swiper main_slide">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide">
+           <a href="#" title="링크">
+            <img src="./img/slide01.webp" alt="">
+           </a>
+         </div>
+         <div class="swiper-slide">
+           <a href="#" title="링크">
+            <img src="./img/slide02.webp" alt="">
+           </a>
+         </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </article>
+
+
+  <section id="con">
+   <div class="soap">
+     <article>
+       <h2>록시땅 아트 오브 솝 컬렉션</h2>
+       <img src="./img/art_of_soap.webp" alt="록시땅 아트 오브 솝 컬렉션" id="soap_img">
+       <div class="soap_right">
+        <h2>
+          <strong>ART OF SOAP</strong>
+        </h2>
+        <p>프랑스 마르세유 지방의 비누 장인이 고안한 레시피로<br>
+           완성된 아트 오브 솝 컬렉션. 장인 정신이 담긴 뛰어난<br>
+           품질은 물론 환경까지 고려한 최고의 컬렉션 입니다.           
+        </p>
+        <a href="#" title="체험하기" class="button">체험하기</a>
+       </div>
+       <div class="soap_border"></div>
+    </article>
+   </div>
+
+   <article class="shop">
+     <h2>쇼핑</h2>
+     <div class="shop_wrap">
+        <img src="./img/membership.png" alt="무료배송"> 
+        <p class="p_center">
+        <span>록시땅 공식몰 단독혜택</span>
+        <span>전 구매 무료배송 / 첫구매 시, 미니 샤워오일 증정 / 공식몰 상시 5% 할인 </span>
+        <a href="#" title="" class="button">자세히 보기</a>
+        </p>
+     </div>
+
+    
+    <!-- 상품목록 제이쿼리 슬라이드 -->
+    <div class="swiper shop_slide">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!-- 상품목록1 -->
+          <ul>
+            <li>
+              <img src="./img/product01.webp" alt="상품1">
+              <div class="info">
+                <h4>[공식몰 단독]</h4>
+                <p>리셋세럼 50ml<br>골든 듀오 세트</p>
+                <P>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</P>
+                <span class="price">&#8361; 87,000</span>
+                <a href="#" title="구매하기" class="button">구매하기</a>
+              </div>
+            </li>
+            <li>
+              <img src="./img/product02.webp" alt="상품2">
+              <div class="info">
+                <h4>[공식몰 단독]</h4>
+                <p>리셋 트리페이스 에센스<br>골든 트리오 세트</p>
+                <P>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</P>
+                <span class="price">&#8361; 87,000원</span>
+                <a href="#" title="구매하기" class="button">구매하기</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper-slide">
+          <!-- 상품목록2 -->
+          <ul>
+            <li>
+              <img src="./img/product03.webp" alt="상품1">
+              <div class="info">
+                <h4>[베스트 셀러 모음]</h4>
+                <p>리셋 세럼 30ml<br>탄력 세트</p>
+                <P>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</P>
+                <span class="price">&#8361; 87,000</span>
+                <a href="#" title="구매하기" class="button">구매하기</a>
+              </div>
+            </li>
+            <li>
+              <img src="./img/product04.webp" alt="상품2">
+              <div class="info">
+                <h4>[공식몰 단독]</h4>
+                <p>이모르뗄 디바인 크림<br>골든 듀오 세트</p>
+                <P>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</P>
+                <span class="price">&#8361; 160,000</span>
+                <a href="#" title="구매하기" class="button">구매하기</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="swiper-pagination dot"></div>
+    </div>
+   </article>
+
+   <div class="story">
+     <article>
+       <div class="story_left">
+       <h2>
+         2022 체리 블라썸 쎄르지에 에뚜왈
+      </h2>
+      <p>프로방스 밤 하늘에 수놓는 향기로운 벚꽃 은하수가 연상되는<br>리미티드 체리 블라썸 에디션</p>
+      <a href="b.html" title="자세히보기" class="button">자세히 보기</a>
+      </div>
+      <img src="./img/c_blossom.webp" alt="체리블라썸쎄르지에에뚜왈" class="s_img">
+     </article>
+   </div>
+
+  <!-- 인스타 갤러리 영역 -->
+
+   <article class="insta">
+    <h2>
+      <img src="./images/insta_icon.gif" alt="인스타그램">
+      instagram<span class="id_name">@loccitanekorea</span>
+    </h2>
+
+    <ul class="gallery">
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns01.webp" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns30.webp" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns23.webp" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns07.webp" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns20.jpg" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns18.jpg" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns01.webp" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns15.png" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns25.jpg" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns12.webp" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/sns16.jpg" alt="인스타사진">
+        </a>
+      </li>
+      <li>
+        <a href="#" title="sns">
+          <img src="./img/TDL_270x140.jpg" alt="인스타사진">
+        </a>
+      </li>
+    </ul>
+
+
+   </article>
+  </section>
+ </main>
+
+ <!-- 푸터영역 시작 -->
+ <footer>
+   <div class="f_top">
+     <ul class="f_info01">
+       <li><a href="#" title="사이트맵">사이트 맵</a></li>
+       <li><a href="#" title="이용약관">이용약관</a></li>
+       <li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+       <li><a href="#" title="International L'OCCITANE">International L'OCCITANE</a></li>
+     </ul>
+   </div>
+   <div class="f_info02">
+   <img src="./img/logo.png" alt="">
+   <ul class="f_sns">
+      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+   </ul>
+  </div>
+   
+   <address>
+     <p>상호: 록시땅코리아 유한책임회사 &#x007C; 사업자 등록 번호 211-87-74234 &#x007C; 대표자 : 안드레조셉호프만 <br> 주소 : 서울특별시 강남구 테헤란로 87길 36(삼성동) 도심공항타워 21층(06164)</p>
+     <p>대표전화 : (02)2054-0500 &#x007C; 대표메일 : LOCCITANE@LOCCITANE.CO.KR <br> 결제관련문의 : 1588-4954 &#x007C; 주문관련문의 : (02)2054-0500 &#x007C; 통신판매번호 : 2008-서울강남-0844</p>
+     <p><strong>Copyright &copy; L’OCCITANE KOREA all rights reserved. 2022</strong></p>
+   </address> 
+   
+ </footer>
+
+  <!-- 메인슬라이드 동작을 위한 스크립트 -->
+  <script>
+
+    //메인슬라이드 스크립트
+  var swiper = new Swiper(".main_slide", {
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".main_slide .swiper-button-next",
+      prevEl: ".main_slide .swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+  
+    //상품목록을 위한 스크립트
+    let shop = new Swiper('.shop_slide',{
+      pagination:{
+        el:".swiper-pagination",
+        clickable: true,
+      }
+    });
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+@charset "utf-8";
+
+/* 최소 768이상 ~ 1024px */
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+
+/* 헤더영역 */
+header{
+  width: 100%;
+  height: 170px;
+  background: #ffcb00;
+}
+.header_top{
+  width: 100%;
+  margin: 0px auto;
+  position: relative;
+}
+.header_top > h1{
+  position: relative;
+  top: 40px;
+  width: 200px;
+}
+.header_top > h1 img{
+  width: 100%;
+  padding-left: 5%;
+}
+
+
+.lnb{
+  transform: translateY(-20px); 
+  width: 100%;
+}
+.lnb > ul{
+  display: flex;
+  justify-content:flex-end;
+}
+.lnb > ul > li{
+  margin: 0px 10px;
+}
+.lnb > ul > li > a{
+  color: #fff;
+  font-size:13px;
+}
+.lnb > ul > li > a:hover{
+  text-decoration: underline;
+}
+
+/* 검색폼 서식 */
+.header_top > fieldset{
+  position: absolute;
+  right: 0px; top: 80px;
+  border: none;
+}
+fieldset > legend{
+  display: none;
+}
+fieldset #search{
+  width: 230px; height: 40px;
+  border-radius: 26px;
+  text-align: center;
+  border: none;
+  position: absolute;
+  bottom: 15px; right: 20px;
+}
+label.fa-search{
+  font-size:22px;
+  transform: translate(-36px, -24px); 
+}
+.fa-search span{display: none;}
+
+.header_bottom{
+  width: 100%;
+  height: 48px;
+  background-color: rgba(255,255,255,0.9);
+  position: absolute;
+  top: 122px;
+  z-index: 100; /*메인슬라이드보다 위로 올라오게*/
+  overflow: hidden; /*해당영역을 벗어난 콘텐츠는 숨긴다. = 서브메뉴 숨겨짐*/
+  transition: 0.5s;
+}
+
+.header_bottom:hover{
+  height: 480px;
+
+}
+
+/* 메인메뉴서식 */
+
+.total_btn{
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 125px;
+  z-index: 99999;
+}
+
+.total_btn > i.fa-bars{
+  padding: 6px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  display: block;
+}
+
+
+/* 토글 클릭하면 내비게이션 나오게 하기 */
+#toggle:checked + header > .header_bottom{
+  height: 370px;
+}
+
+.gnb{
+  background-color: #e0b506;
+  height: 48px;
+  width: 100%;
+}
+.gnb > ul{
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+}
+.gnb > ul > li{
+  line-height: 48px;
+  /* margin-right: 10px; */
+  text-align: center;
+  position: relative; /*서브메뉴의 부모로서 기준 잡아짐*/
+  padding: 0px 25px;
+}
+
+.gnb > ul > li > label{
+  color: #333;
+  font-size: 14px;
+  font-weight:400;
+  /* border-right: 1px solid #ccc; */
+}
+
+/* 서브메뉴 서식 */
+.sub{
+  position: absolute; /*서브메뉴 만들때 핵심 li에 relative sub에 absolute*/
+  width: 100%;
+  left: 0px;
+}
+.sub > li{}
+.sub > li:last-child{
+  padding-right: 10%;
+}
+.sub > li > a{
+  font-size:12px;
+}
+.sub > li > a:hover{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 메인영역 */
+
+.main_slide{position: relative;}
+.main_slide img{width: 100%;}
+
+.cont{
+  width:100%; 
+  /* transform: translateY(-25px); */
+  display:grid;
+  box-sizing: border-box;
+  /* grid-gap:1.9531%; */
+  padding:3px 2.1484%;
+  grid-template-areas:
+    "soap"
+    "shop"
+    "story"
+    "insta";
+}
+/* .cont img{
+  width: 100%; 자동으로 이미지 크기 조절
+  height: auto;
+} */
+.cont h3 {display: none;}
+
+
+/* 메인서식 */
+main{}
+.slide{}
+.slide > h2{display: none;}
+.slide img{width: 100%;}
+
+.soap{
+  grid-area: soap;
+  width: 80%;
+  height: 600px;
+  position: relative;
+  margin: 20px auto;
+  border: 5px solid #ffcb00;
+}
+.soap article{
+  padding: 50px 0px;
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+  clear: both;
+}
+
+.soap article > h2{
+  display: none;
+}
+.soap #soap_img{
+  width: 450px;
+}
+
+.soap .soap_right{
+  width: 450px;
+  text-align: center;
+  margin: 0px auto;
+
+}
+
+.soap_right > h2{
+  font-size: 36px;
+  color: #333;
+  font-weight: 200;
+  padding-top: 30px;
+  padding-bottom: 16px;
+}
+
+.soap_right p{
+  color: #333;
+  font-size: 18px;
+  line-height: 30px;
+  padding-bottom: 45px;
+  position: relative;
+}
+
+
+
+/* 버튼서식 */
+.button{
+  background: #ffcb00;
+  font-size: 16px;
+  padding: 6px 30px;
+  transition: 0.5s;
+  cursor:pointer;
+}
+
+.button:hover{
+  color: #333;
+  background: #fff;
+  border: 1px solid #333;
+}
+
+/* 록시땅 쇼핑서식 */
+.shop{
+  grid-area: shop;
+  width: 100%;
+  overflow: hidden;
+}
+
+.shop > h2{display: none;}
+
+.shop_wrap{
+  width: 100%;
+  height: 320px;
+  position: relative;
+  background-color: #ffea94;
+}
+
+.shop_wrap img{
+  width: 150px;
+  display: block;
+  margin: 20px auto;
+  padding: 14px;
+}
+
+.p_center{
+  width: 600px;
+  margin: 5px auto;
+  text-align: center;
+  position: relative;
+}
+.p_center a{
+  display: block;
+  text-align: center;
+  width: 100px;
+  margin: 40px auto 20px auto;
+  line-height: 20px;
+}
+.p_center span:first-of-type{
+  top: 0px;
+  font-size: 25px;
+  font-weight: 400;
+  width: 400px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.p_center span:last-of-type{
+  position: absolute; 
+  display: block;
+  width: 600px;
+  font-size: 16px;
+  font-weight: 100;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+
+
+
+/* 스와이퍼 슬라이드 - 상품목록 */
+.shop_slide{
+  width: 100%;
+  position: relative; /*콘토를 버튼의 기준-부모*/  
+}
+
+.shop_slide .swiper-slide{
+  height: 550px;
+}
+
+.shop_slide .swiper-slide img{
+  width: 70%;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.swiper-slide > ul{
+  /* width: 100%; */
+  padding:0px 30px;
+  box-sizing: border-box; /*가로 100보다 초과되지 않게*/
+  display: flex;
+}
+.swiper-slide > ul > li{
+  width: 100%;
+  position: relative;
+}
+
+/* 상품상세정보 서식 */
+.info{
+  width: 70%;
+  overflow: hidden;
+  position: absolute;
+  font-size: 1rem;
+  top: 300px;
+  left: 50px;
+}
+.info > h4 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.info > p{
+  line-height: 1.5rem;
+  font-size: 0.75rem;
+  padding-top: 10px;
+}
+.info > .price{
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #9b0a0a;
+}
+
+.info > a{
+  line-height: 2rem;
+}
+
+
+
+/*  story영역 - 2022 체리 블라썸 */
+
+.story{
+  grid-area: story;
+  width: 100%;
+  background: #E8D5CE;
+  height: 680px;
+}
+
+.story article h2{
+  font-size: 36px;
+  color: #333;
+  font-weight: 400;
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+.story article h2 img{
+  width: 40px;
+  padding-right: 10px;
+}
+
+.story .s_img{
+  width: 500px;
+  display: block;
+  margin: 35px auto;
+}
+
+.story_left{
+  width: 650px;
+  display: block;
+  margin: 0px auto;
+  text-align: center;
+}
+.story_left p{
+  font-size: 18px;
+  line-height: 30px;
+  padding-bottom: 30px;
+}
+
+
+/* 인스타그램 갤러리 */
+.insta{
+  grid-area: insta;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.insta > h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 200;
+  margin-bottom: 50px;
+  padding-top: 40px;
+}
+
+.insta > h2 > img{
+  transform: translateY(9px);
+  padding-right: 10px;
+}
+.id_name{
+  text-transform: lowercase;
+  font-size: 18px;
+  display: block;
+  padding: 10px 0px;
+}
+
+/* 그리드 레이아웃 */
+.gallery{
+  width: 100%;
+  margin: 0px auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
+}
+  
+.gallery > li {
+  overflow: hidden;
+}
+.gallery > li img{
+  width: 100%; height: 100%;
+  object-fit: fill;
+  transition: 0.3s;
+}
+
+.gallery > li img:hover{
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+
+
+
+/* 푸터영역 */
+footer{
+  width: 100%;
+  background: #ffcb00;
+}
+.f_top{
+  background: #e0b506;
+  height: 50px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.f_info01{
+  height: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.f_info01 > li {
+  text-align: center;
+  padding: 15px;
+}
+
+.f_info01 > li > a{
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+}
+
+.f_info01 > li > a:hover{
+  text-decoration: underline;
+}
+
+.f_info02{
+  text-align: center;
+  margin: 5px auto;
+}
+.f_info02 img{
+  margin-bottom: 5px;
+}
+.f_info02 .f_sns{
+  display: flex;
+  justify-content: center;
+}
+
+.f_info02 .f_sns i.fa-brands{
+  font-size: 20px;
+  padding: 10px;
+}
+
+address{
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgb(70, 70, 70);
+}
+
+address p:last-child{
+  font-size: 14px;
+  line-height: 30px;
+}
+
+
+
+.f_info03 img{
+  height: 30px;
+  padding: 20px;
+}
+
+
+}

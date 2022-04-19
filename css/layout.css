@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+header, footer{
+  width: 100%;
+}
+
+header{
+  width: 100%;
+  /* height: 100px; 레이아웃을 짜기 위해 넣었던 것 레이아웃 확인 후 삭제 */
+  /* background: #ccc; 완성 후 삭제 */
+}
+
+.h_top{
+  height: 30px;
+  background: #ffcb00;
+
+}
+
+.h_inner, .f_inner{
+  width: 1020px;
+  margin: 0px auto;
+  /* background: #ffff00; 완성 후 삭제 */
+}
+
+
+.h_inner{
+  display: flex;
+  justify-content: right;
+}
+
+.h_inner .sns img:last-child{
+  margin-left: -3px;
+}
+
+.h_inner .lnb > ul{
+  width: 260px;
+  display: flex;
+  background: #525D9F;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.h_inner .lnb > ul > li{
+  line-height: 30px;
+}
+
+.h_inner .lnb li a{
+  color: #fff;
+}
+
+.h_bottom{
+  width: 1020px;
+  height: 80px;
+  margin: 0px auto;
+}
+.h_bottom > h1{
+  position: absolute;
+  z-index: 1000;
+}
+.h_bottom > .gnb{
+  /* 현재위치에서 아래로 이동 */
+  position: relative;
+  top: 35px;
+  width: 100%; height: 35px; 
+  padding-top: 10px;
+  background: rgba(255,255,255,.8);
+  overflow: hidden;
+  transition: .5s;
+  z-index: 100;
+}
+
+.h_bottom > .gnb:hover{
+  height: 300px;
+}
+
+.h_bottom > .gnb > ul{
+  float: right;
+  display: flex;
+  justify-content: end;
+}
+
+.h_bottom > .gnb > ul > li > a{
+  padding: 0px 20px;
+  margin: 0px 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.h_bottom > .gnb > ul > li > a:hover{
+  color: #525D9F; 
+}
+
+.h_bottom > .gnb > ul > li:last-child > a{
+  padding-right: 0px; 
+}
+
+.h_bottom > .gnb > ul > li:last-child > a:hover{
+  color: #10a010;
+}
+
+/* 서브메뉴 서식 */
+.gnb .sub{
+  padding-top: 14px;
+}
+.gnb .sub > li{
+  text-align: center;
+}
+.gnb .sub > li > a{
+  font-size: 12px;
+  line-height: 30px;
+}
+
+
+
+
+footer{
+  /* clear:both main에서 float안써서 클리어보스 안해도 됨 */
+  /* height: 100px; 레이아웃 확인용 */
+  background: #e7e7e7;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.f_inner{
+  height: 120px;
+  position: relative; /*기준*/
+}
+
+.f_inner > h2{
+  position: absolute;
+  right: 10px; bottom: 10px;
+}
+
+.f_lnb{padding-top: 30px;}
+.f_lnb > ul {
+  display: flex;
+}
+.f_lnb > ul > li{}
+.f_lnb > ul > li:first-child a {
+  border-right: 1px solid rgb(94, 94, 94);
+}
+
+.f_lnb > ul > li > a{
+  padding: 0px 10px;
+}
+
+address{
+  padding-top: 10px;
+  line-height: 24px;
+  font-style: normal;
+}
